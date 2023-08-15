@@ -1,9 +1,9 @@
 def main(): 
     clubs = [
-        Club("Club A", "Address A"),
-        Club("Club B", "Address B"),
-        Club("Club C", "Address C"),
-        Club("Club D", "Address D"),
+        Club("Green Fitness", "Coast City"),
+        Club("Red Fitness", "Starling City"),
+        Club("Daily Fitness", "Metropolis"),
+        Club("Bat Fitness", "Gotham City")
     ]
 
 members = []
