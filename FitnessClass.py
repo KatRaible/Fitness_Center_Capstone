@@ -22,7 +22,7 @@ class Single_Club_Member(Member):
 
     def check_in(self, club):
         if club == self.club:
-            print(f"CHECKED IN! to {club}")
+            print(f"CHECKED IN! to {club.name}")
             ##print a response here
             ##need to add membership points
         else:
@@ -35,4 +35,4 @@ class MultiClubMember(Member):
 
     def check_in(self, club):
         self.membership_points += 1
-        print(f"Checked in to {club}. Membership points: {self.membership_points}")
+        print(f"Checked in to {club.name}. Membership points: {self.membership_points}")

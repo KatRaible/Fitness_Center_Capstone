@@ -36,15 +36,27 @@ def main():
                 print("error")
         elif choice == 2:  # remove member
             member_id = input("Enter member ID to remove: ")
+            print(len(members))
             for member in members:
-                if member.member_id == member_id:
+                if member_id == member.member_id:
                     members.remove(member)
                     print("Member removed.")
                     break
             else:
                 print("Member not found.")
         elif choice == 3:  # display member info
-            pass
+            member_id = input("Enter member ID to display info: ")
+            for member in members:
+                if member.member_id == member_id:
+                    print(f"Member ID: {member.member_id}")
+                    print(f"Member Name: {member.name}")
+                    if isinstance(member, Single_Club_Member):
+                        print(f"Club: {member.club.name}")
+                    elif isinstance(member, MultiClubMember):
+                        print(f"Membership Points: {member.membership_points}")
+                    break
+            else:
+                print("Member not found.")
         elif choice == 4: #check in member
             pass
         elif choice == 5: #generate bill
