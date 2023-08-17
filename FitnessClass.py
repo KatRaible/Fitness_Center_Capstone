@@ -2,8 +2,10 @@ class Club:
     def __init__(self, name, address):
         self.name = name
         self.address = address
-
-
+        self.checked_in_members = []
+    
+    def check_in_member(self, member):
+        self.checkin_in_members.append(member)
 
 class Member:
     def __init__(self, member_id, name):
@@ -13,12 +15,10 @@ class Member:
     def check_in(self, club):
         pass
 
-
 class Single_Club_Member(Member):
     def __init__(self, member_id, name, club):
         super().__init__(member_id, name)
         self.club = club
-
 
     def check_in(self, club):
         if club == self.club:

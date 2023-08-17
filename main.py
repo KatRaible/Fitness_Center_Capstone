@@ -58,6 +58,18 @@ def main():
             else:
                 print("Member not found.")
         elif choice == 4: #check in member
+            member_id = input("Enter member ID to check in: ")
+            for member in members:
+                if member.member_id == member_id:
+                    if isinstance(member, Single_Club_Member):
+                        member.club.check_in_member(member)
+                        print(f"Member {member.name} checked in at {member.club.name}")
+                    elif isinstance(member, MultiClubMember):
+                        print("Multi Club Members cannot be checked in individually. ")
+                    break
+            else:
+                print("Member not found or ineligible for check-in.")
+                       
             pass
         elif choice == 5: #generate bill
             pass
