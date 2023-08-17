@@ -27,6 +27,7 @@ def main():
             for index, club in enumerate(clubs, start=1):
                 print(f"{index}. {club.name}")
             club_choice = int(input("Enter club choice: "))
+            club_choice = club_choice - 1
             member_type = input("Enter member type (Single/Multi): ").lower()
             if member_type == "single":
                 members.append(Single_Club_Member(member_id, name, clubs[club_choice]))
@@ -70,9 +71,21 @@ def main():
             else:
                 print("Member not found or ineligible for check-in.")
                        
-            pass
         elif choice == 5: #generate bill
-            pass
+            member_id = input("Enter Member ID to generate bill: ")
+            billed_member =  None
+            for member in members:
+                if member.member_id == member_id:
+                    billed_member = member
+                    break
+            if billed_member: 
+                print("Bill")
+                if MultiClubMember:
+                    print("$60")
+                else: 
+                    print("$50")
+            else: 
+                print("Member not found or ineligible for check-in.")
         elif choice == 6: #exit
             print("Exiting  ")
             break
